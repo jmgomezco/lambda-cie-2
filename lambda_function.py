@@ -49,9 +49,8 @@ def lambda_handler(event, context):
             'sessionId': sessionId,
             'fecha_hora': datetime.utcnow().isoformat(),  # Mejor registrar hora real
             'codigo': codigo,
-            'desc': desc,
-            'ip_cliente': ip_cliente   # <-- Campo nuevo para guardar la IP del cliente
-        }
+            'desc': desc
+             }
         print("Item a guardar:", item)
         table.put_item(Item=item)
         print("Item guardado correctamente")
